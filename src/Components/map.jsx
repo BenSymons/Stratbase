@@ -22,7 +22,7 @@ const Map = () => {
             <button className="right" disabled={isDisabled("E")} onClick={() => move("E")}>&#8680;</button>
         </div>
         <button className="down" disabled={isDisabled("S")} onClick={() => move("S")}>&#8681;</button>
-        <Nav room={room} level={level} />
+        <Nav room={room} level={level} subchapter={exits[level][room].subchapter} />
     </div>)
 }
 

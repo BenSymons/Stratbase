@@ -16,6 +16,7 @@ const nav = (props) => {
         <div>
             <div>
                 <h2>Chapter: {dictionary[props.level]}</h2>
+                <h2>Sub Chapter: {props.subchapter}</h2>
                 <p>Room: {props.room}</p>
                 <button>Forsaken City</button>
                 <button>Old Site</button>

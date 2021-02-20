@@ -41,6 +41,8 @@ const Map = () => {
         <button className="down" id={isHidden("S1")} onClick={() => move("S1")}>&#8681;</button>
         <button className="down" id={isHidden("S2")} onClick={() => move("S2")}>&#8681;</button>
         <button className="down" id={isHidden("S3")} onClick={() => move("S3")}>&#8681;</button>
+        <button id={isHidden("next")} onClick={() => move("next")}>Next</button>
+        <button id={isHidden("prev")} onClick={() => move("prev")}>Previous</button>
         <Nav room={room} level={level} subchapter={exits[level][room].subchapter} setLevel={setLevel} setRoom={setRoom} />
     </div>)
 }

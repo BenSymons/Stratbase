@@ -23,9 +23,14 @@
 }
 
 .roompic{
-  width: 75%;
+  width: 50%;
 }
 
 #map-middle{
   display: flex;
+  justify-content: center;
+}
+
+#hidden{
+  display: none;
 }

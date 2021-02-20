@@ -14,15 +14,34 @@ const Map = () => {
         return (!exits[level][room].hasOwnProperty(direction))
     }
 
+    const isHidden = (direction) => {
+        const exists = exits[level][room].hasOwnProperty(direction)
+        if (!exists) {
+            return "hidden"
+        }
+    }
+
     return (<div id="map">
-        <button className="up" disabled={isDisabled("N")} onClick={() => move("N")}>&#8679;</button>
+        {/* Up/North movement */}
+        <button className="up" id={isHidden("N1")} onClick={() => move("N1")}>&#8679;</button>
+        <button className="up" id={isHidden("N2")} onClick={() => move("N2")}>&#8679;</button>
+        <button className="up" id={isHidden("N3")} onClick={() => move("N3")}>&#8679;</button>
         <div id="map-middle">
-            <button className="left" disabled={isDisabled("W")} onClick={() => move("W")}>&#8678;</button>
+            {/* Left/East movement */}
+            <button className="left" id={isHidden("W1")} onClick={() => move("W1")}>&#8678;</button>
+            <button className="left" id={isHidden("W2")} onClick={() => move("W2")}>&#8678;</button>
+            <button className="left" id={isHidden("W3")} onClick={() => move("W3")}>&#8678;</button>
             <img className="roompic" src={`/Images/${level}${room}.png`} alt="First room of Forsaken City"></img>
-            <button className="right" disabled={isDisabled("E")} onClick={() => move("E")}>&#8680;</button>
+            {/* Right/East movement */}
+            <button className="right" id={isHidden("E1")} onClick={() => move("E1")}>&#8680;</button>
+            <button className="right" id={isHidden("E2")} onClick={() => move("E2")}>&#8680;</button>
+            <button className="right" id={isHidden("E3")} onClick={() => move("E3")}>&#8680;</button>
         </div>
-        <button className="down" disabled={isDisabled("S")} onClick={() => move("S")}>&#8681;</button>
-        <Nav room={room} level={level} subchapter={exits[level][room].subchapter} />
+        {/* Down/South movement */}
+        <button className="down" id={isHidden("S1")} onClick={() => move("S1")}>&#8681;</button>
+        <button className="down" id={isHidden("S2")} onClick={() => move("S2")}>&#8681;</button>
+        <button className="down" id={isHidden("S3")} onClick={() => move("S3")}>&#8681;</button>
+        <Nav room={room} level={level} subchapter={exits[level][room].subchapter} setLevel={setLevel} setRoom={setRoom} />
     </div>)
 }
 

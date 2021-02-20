@@ -12,14 +12,19 @@ const nav = (props) => {
         "SM": "Summit"
     }
 
+    const changeLevel = (level) => {
+        props.setLevel(level);
+        props.setRoom("1");
+    }
+
     return (
         <div>
             <div>
                 <h2>Chapter: {dictionary[props.level]}</h2>
                 <h2>Sub Chapter: {props.subchapter}</h2>
                 <p>Room: {props.room}</p>
-                <button>Forsaken City</button>
-                <button>Old Site</button>
+                <button onClick={() => changeLevel("FS")}>Forsaken City</button>
+                <button onClick={() => changeLevel("OS")}>Old Site</button>
                 <button>Celestial Resort</button>
                 <button>Golden Ridge</button>
                 <button>Mirror Temple</button>

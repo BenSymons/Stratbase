@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import exits from "../data/exits.json";
-import Nav from "./nav";
+import Info from "./info";
 
 const Map = () => {
     const [level, setLevel] = useState("FS")
@@ -43,7 +43,7 @@ const Map = () => {
         <button className="down" id={isHidden("S3")} onClick={() => move("S3")}>&#8681;</button>
         <button id={isHidden("next")} onClick={() => move("next")}>Next</button>
         <button id={isHidden("prev")} onClick={() => move("prev")}>Previous</button>
-        <Nav room={room} level={level} subchapter={exits[level][room].subchapter} setLevel={setLevel} setRoom={setRoom} />
+        <Info room={room} level={level} subchapter={exits[level][room].subchapter} setLevel={setLevel} setRoom={setRoom} />
     </div>)
 }
 

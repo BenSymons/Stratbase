@@ -1,6 +1,6 @@
 import React from "react"
 
-const nav = (props) => {
+const info = (props) => {
 
     const dictionary = {
         "FS": "Forsaken City",
@@ -12,9 +12,20 @@ const nav = (props) => {
         "SM": "Summit"
     }
 
+    const bookmarks = {
+        "FS": { "Start": "1", "Crossing": "7", "Chasm": "15" },
+        "OS": { "Start": "1", "Intervention": "13", "Awake": "26" }
+    }
+
+    const subchapters = Object.keys(bookmarks[props.level])
+
     const changeLevel = (level) => {
         props.setLevel(level);
         props.setRoom("1");
+    }
+
+    const changeSubChapter = (subchapter) => {
+        props.setRoom(bookmarks[props.level][subchapter])
     }
 
     return (
@@ -31,8 +42,15 @@ const nav = (props) => {
                 <button>Reflection</button>
                 <button>Summit</button>
             </div>
+            <div>
+                <ul>
+                    {subchapters.map(subchapter => {
+                        return <li><button onClick={() => changeSubChapter(subchapter)}>{subchapter}</button></li>
+                    })}
+                </ul>
+            </div>
         </div>
     )
 }
 
-export default nav
+export default info

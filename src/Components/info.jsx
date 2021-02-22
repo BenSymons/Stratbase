@@ -1,4 +1,5 @@
 import React from "react"
+import exits from "../data/exits.json"
 
 const info = (props) => {
 
@@ -11,6 +12,8 @@ const info = (props) => {
         "RF": "Reflection",
         "SM": "Summit"
     }
+
+    const roomNumbers = Object.keys(exits[props.level])
 
     const bookmarks = {
         "FS": { "Start": "1", "Crossing": "7", "Chasm": "15" },
@@ -31,9 +34,10 @@ const info = (props) => {
     return (
         <div>
             <div>
-                <h2>Chapter: {dictionary[props.level]}</h2>
-                <h2>Sub Chapter: {props.subchapter}</h2>
+                <p>Chapter: {dictionary[props.level]}</p>
+                <p>Sub Chapter: {props.subchapter}</p>
                 <p>Room: {props.room}</p>
+                <h2>Select Chapter</h2>
                 <button onClick={() => changeLevel("FS")}>Forsaken City</button>
                 <button onClick={() => changeLevel("OS")}>Old Site</button>
                 <button>Celestial Resort</button>
@@ -43,9 +47,18 @@ const info = (props) => {
                 <button>Summit</button>
             </div>
             <div>
+                <h2>Select SubChapter</h2>
                 <ul>
                     {subchapters.map(subchapter => {
                         return <li><button onClick={() => changeSubChapter(subchapter)}>{subchapter}</button></li>
+                    })}
+                </ul>
+            </div>
+            <div>
+                <h2>Select Room</h2>
+                <ul>
+                    {roomNumbers.map(roomNumber => {
+                        return <li><button onClick={() => props.setRoom(roomNumber)}>{roomNumber}</button></li>
                     })}
                 </ul>
             </div>

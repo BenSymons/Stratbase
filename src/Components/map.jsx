@@ -31,7 +31,7 @@ const Map = () => {
             <button className="left" id={isHidden("W1")} onClick={() => move("W1")}>&#8678;</button>
             <button className="left" id={isHidden("W2")} onClick={() => move("W2")}>&#8678;</button>
             <button className="left" id={isHidden("W3")} onClick={() => move("W3")}>&#8678;</button>
-            <img className="roompic" src={`/Images/${level}${room}.png`} alt="First room of Forsaken City"></img>
+            <img className="roompic" src={`/Images/${level}${room}.png`} alt="a room in the game Celeste"></img>
             {/* Right/East movement */}
             <button className="right" id={isHidden("E1")} onClick={() => move("E1")}>&#8680;</button>
             <button className="right" id={isHidden("E2")} onClick={() => move("E2")}>&#8680;</button>

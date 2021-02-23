@@ -17,7 +17,8 @@ const info = (props) => {
 
     const bookmarks = {
         "FS": { "Start": "1-6", "Crossing": "7-14", "Chasm": "15-20" },
-        "OS": { "Start": "1-12", "Intervention": "13-25", "Awake": "26-33" }
+        "OS": { "Start": "1-12", "Intervention": "13-25", "Awake": "26-33" },
+        "CR": { "Start": "1-20", "Huge Mess": "21-45", "Elevator Shaft": "46-55", "Presidential Suite:": "56-64" }
     }
 
     const subchapters = Object.keys(bookmarks[props.level])
@@ -53,7 +54,7 @@ const info = (props) => {
                 <h2>Select Chapter</h2>
                 <button onClick={() => changeLevel("FS")}>Forsaken City</button>
                 <button onClick={() => changeLevel("OS")}>Old Site</button>
-                <button>Celestial Resort</button>
+                <button onClick={() => changeLevel("CR")}>Celestial Resort</button>
                 <button>Golden Ridge</button>
                 <button>Mirror Temple</button>
                 <button>Reflection</button>

@@ -10,10 +10,6 @@ const Map = () => {
         setRoom(exits[level][room][direction])
     }
 
-    const isDisabled = (direction) => {
-        return (!exits[level][room].hasOwnProperty(direction))
-    }
-
     const isHidden = (direction) => {
         const exists = exits[level][room].hasOwnProperty(direction)
         if (!exists) {

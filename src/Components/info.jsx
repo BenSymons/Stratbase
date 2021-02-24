@@ -19,7 +19,8 @@ const info = (props) => {
         "FS": { "Start": "1-6", "Crossing": "7-14", "Chasm": "15-20" },
         "OS": { "Start": "1-12", "Intervention": "13-25", "Awake": "26-33" },
         "CR": { "Start": "1-20", "Huge Mess": "21-45", "Elevator Shaft": "46-55", "Presidential Suite:": "56-64" },
-        "GR": { "Start": "1-11", "Shrine": "12-16", "Old Trail": "17-24", "Cliff Face": "25-34" }
+        "GR": { "Start": "1-11", "Shrine": "12-16", "Old Trail": "17-24", "Cliff Face": "25-34" },
+        "MT": { "Start": "1-12", "Depths": "13-26", "Unravelling": "27-38", "Search": "39-46", "Rescue": "47-58" }
     }
 
     const subchapters = Object.keys(bookmarks[props.level])
@@ -57,9 +58,9 @@ const info = (props) => {
                 <button onClick={() => changeLevel("OS")}>Old Site</button>
                 <button onClick={() => changeLevel("CR")}>Celestial Resort</button>
                 <button onClick={() => changeLevel("GR")}>Golden Ridge</button>
-                <button>Mirror Temple</button>
-                <button>Reflection</button>
-                <button>Summit</button>
+                <button onClick={() => changeLevel("MT")}>Mirror Temple</button>
+                <button onClick={() => changeLevel("R")}>Reflection</button>
+                <button onClick={() => changeLevel("S")}>Summit</button>
             </div>
             <div>
                 <h2>Select SubChapter</h2>

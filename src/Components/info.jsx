@@ -20,7 +20,8 @@ const info = (props) => {
         "OS": { "Start": "1-12", "Intervention": "13-25", "Awake": "26-33" },
         "CR": { "Start": "1-20", "Huge Mess": "21-45", "Elevator Shaft": "46-55", "Presidential Suite:": "56-64" },
         "GR": { "Start": "1-11", "Shrine": "12-16", "Old Trail": "17-24", "Cliff Face": "25-34" },
-        "MT": { "Start": "1-12", "Depths": "13-26", "Unravelling": "27-38", "Search": "39-46", "Rescue": "47-58" }
+        "MT": { "Start": "1-12", "Depths": "13-26", "Unravelling": "27-38", "Search": "39-46", "Rescue": "47-58" },
+        "R": { "Start": "1", "Lake": "2-7", "Hollows": "8-37", "Reflection": "38-42", "Rock Bottom": "43-65", "Resolution": "66-67" }
     }
 
     const subchapters = Object.keys(bookmarks[props.level])
